@@ -1,0 +1,167 @@
+--IAT:M GUI
+----------------------------------------------------------------------
+loadstring(game:HttpGet(("https://pastebin.com/raw/H4hbthcv"),true))()
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("In Another Time Modded", "BloodTheme")
+local Tab = Window:NewTab("Stand Farm")
+local Section = Tab:NewSection("Items")
+ 
+Section:NewButton("Get Arrow", "Gives you an arrow?", function()
+local Event = game:GetService("ReplicatedStorage").ItemGiver:FindFirstChild("4rw87t2y437hg89374"):FireServer()
+Event:FireServer()
+end)
+
+Section:NewButton("Reset", "Resets your stand?", function()
+local Event = game:GetService("ReplicatedStorage").ResetStand:FireServer()
+Event:FireServer()
+end)
+
+local Tab = Window:NewTab("FAKE Specs")
+local Section = Tab:NewSection("Specs")
+
+
+Section:NewButton("Kars", "Gives you Kars", function()
+local Event = game:GetService("ReplicatedStorage").Specs.Kars:FireServer()
+Event:FireServer()
+end)
+
+Section:NewButton("Silver Chariot Requiem", "Gives you Silver Chariot Requiem", function()
+local Event = game:GetService("ReplicatedStorage").Specs.SilverChariotRequiem:FireServer()
+Event:FireServer()
+end)
+
+Section:NewButton("Samurai", "Gives Samurai", function()
+local Event = game:GetService("ReplicatedStorage").Specs.Samurai:FireServer()
+Event:FireServer()
+end)
+
+local Tab = Window:NewTab("Item Farm")
+local Section = Tab:NewSection("Items")
+
+Section:NewButton("Auto Pickup ON", "Picks up all items", function()
+_G.on = true --false to turn off and true to turn on
+while _G.on do
+wait(3) -- you can change the delay here
+char = game:GetService('Players').LocalPlayer.Character
+game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+char = body end)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA('Tool') then
+char.Humanoid:EquipTool(v) end end
+end
+end)
+
+
+Section:NewButton("Auto Pickup OFF", "Turns Auto Pickup into false", function()
+_G.on = false --false to turn off and true to turn on
+while _G.on do
+wait(3) -- you can change the delay here
+char = game:GetService('Players').LocalPlayer.Character
+game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+char = body end)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA('Tool') then
+char.Humanoid:EquipTool(v) end end
+end
+end)
+
+
+
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("Walk Speed")
+Section:NewSlider("Walk Speed", "Walk Speed", 500, 0, function(v) 
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+ 
+Section:NewSlider("Jump Power", "Your Jump Power", 500, 0, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+end)
+
+local Tab = Window:NewTab("Funny things :)")
+local Section = Tab:NewSection("MUST HAVE CRAZY DIAMOND TO MAKE DANGER!")
+
+Section:NewButton("...", "...", function()
+
+local args = {
+    [1] = workspace.BlockingDummy.Humanoid,
+    [2] = 7942189.25,
+    [3] = CFrame.new(262.2638854980469, 5.5558061599731445, 131.09776306152344) * CFrame.Angles(2.2320456504821777, -0.7208006381988525, 2.5397722721099854),
+    [4] = Vector3.new(0, 0, 0),
+    [5] = 0.1,
+    [6] = 100,
+    [7] = "rbxassetid://8067780408",
+    [8] = 100010001000100010001000100010001000100010001000.7333333333333333
+}
+
+game:GetService("ReplicatedStorage").Attacks.Heal.CDHeal:FireServer(unpack(args))
+end)
+
+
+Section:NewButton("Kill Dio", "Kills dio...", function()
+local args = {
+    [1] = workspace.DIO.Humanoid,
+    [2] = 1000000000000000000000000.5,
+    [3] = CFrame.new(107.31787872314453, 3.4121880531311035, 301.38800048828125) * CFrame.Angles(0.7760158181190491, -0.642223060131073, -2.941563129425049),
+    [4] = Vector3.new(4.785920143127441, 0.15217608213424683, 1.4393789768218994),
+    [5] = 0.1,
+    [6] = 0.6,
+    [7] = "rbxassetid://541909913",
+    [8] = 1000.9166666666666666
+}
+
+game:GetService("ReplicatedStorage").Attacks.DamageBlunt:FireServer(unpack(args))
+
+end)
+
+
+local Tab = Window:NewTab("Teleports")
+local Section = Tab:NewSection("TPS")
+
+Section:NewButton("Reset Stand NPC", "Teleport to Reset Stand NPC", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(275.902466, 19.0706158, -22.8000946, 0.682524204, 0, 0.730863035, 0, 1, 0, -0.730863035, 0, 0.682524204)
+end)
+
+
+Section:NewButton("Stand Storage NPC", "Teleport to Stand Storage NPC", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(328.786591, 7.94968748, 108.165329, -0.512492418, 0.0761035234, 0.855312824, 0.0415787399, 0.997095823, -0.0638055652, -0.857684612, 0.00286296569, -0.514168262)
+end)
+
+
+Section:NewButton("Dio Spawn", "Teleport to  NPC", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(67.7141953, -1.29361475, 325.856049, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+
+
+Section:NewButton("Middle Of The Map", "Teleport to  Middle", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(269.095642, 0.499328613, 96.4895172, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+end)
+
+
+
+Section:NewButton("Samurai NPC", "Teleport to Syn", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(63.6640091, 3.10315323, 302.955048, 0, 0.633846462, -0.773458838, 0, 0.773458838, 0.633846462, 1, 0, 0)
+end)
+
+
+
+local Tab = Window:NewTab("FPS DROP")
+local Section = Tab:NewSection("KILL SERVER")
+
+Section:NewButton("CRASH", "CUASE LAG", function()
+   
+for i,v in pairs(game.Workspace:GetDescendants()) do
+if v:IsA("BasePart") or v:IsA("Part") or v:IsA("MeshPart") then
+game:GetService("ReplicatedStorage").Anchor:FireServer(v,false)
+end
+end
+end)
+
